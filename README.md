@@ -1,1 +1,6 @@
-
+The code in this project was developed for the team at greatexpectations.io.  
+For more information on the open source tool, read the docs at https://docs.greatexpectations.io/en/latest/!  
+  
+Great Expectations is an open source python package for automated data quality testing. Using GE, you can quickly and easily build and integrate large suites of tests (called expectations) right into your existing pipeline. One of the new and exciting frontiers at GE is what we call a data profiler. The goal of a profiler is simple: the profiler should be able to read in a batch of example data and build the foundations of an expectation suite for you. Hopefully, the profiler will do all the easy tests for you (expect the table to not be empty, expect column X to be strictly nonnegative, expect boolean column to only contain {True, False}, etc). For an example of a profiler at work, see the GE CLI command: great_expectations suite scaffold https://docs.greatexpectations.io/en/latest/guides/how_to_guides/creating_and_editing_expectations/how_to_create_a_new_expectation_suite_using_suite_scaffold.html  
+  
+One of the shortcomings of the current implementation of data profilers is that they only learn off of one batch of data. If I am pushing weekly or daily data through my pipeline, I probably don't expect all of that data to behave the same. This is where this project comes in. The purpose of this new batch_looping_profiler is to read in many batches of example data and build a suite of expectations iteratively.
